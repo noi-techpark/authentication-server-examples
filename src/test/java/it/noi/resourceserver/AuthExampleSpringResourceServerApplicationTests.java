@@ -1,10 +1,10 @@
-package it.noi.authexamplespringclienttoserver;
+package it.noi.resourceserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AuthExampleSpringClientToServerApplicationTests {
+class AuthExampleSpringResourceServerApplicationTests {
 
 	@Test
 	void contextLoads() {
