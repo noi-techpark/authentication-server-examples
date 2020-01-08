@@ -1,0 +1,21 @@
+server:
+  port: 8082
+
+resource-server:
+  base-uri: http://localhost:8081
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          resource-server-client-client-credentials:
+            provider: noi
+            client-id: spring-example
+            client-secret: 4d0e32be-9295-4687-a9ce-42549bb377f1
+            authorization-grant-type: client_credentials
+            scope: openid
+        provider:
+          noi:
+            authorization-uri: https://auth.aboutbits.local/auth/realms/NOI/protocol/openid-connect/auth
+            token-uri: https://auth.aboutbits.local/auth/realms/NOI/protocol/openid-connect/token
