@@ -1,8 +1,8 @@
 # Editors
 .idea
-innovation-scoreboard.iml
 
 # Project
 target
 
 # Files
+.DS_Store
