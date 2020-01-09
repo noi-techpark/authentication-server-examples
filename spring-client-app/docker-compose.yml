@@ -1,0 +1,12 @@
+version: "3"
+services:
+  java:
+    build:
+      context: .
+      dockerfile: docker/dockerfile-java
+    volumes:
+       - ./:/code
+    working_dir: /code
+    command: ["./mvnw spring-boot:run"]
+    ports:
+      - "8082:8082"

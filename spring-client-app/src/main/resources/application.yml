@@ -2,7 +2,7 @@ server:
   port: 8082
 
 resource-server:
-  base-uri: http://localhost:8081
+  base-uri: http://localhost:8085
 
 spring:
   security:
