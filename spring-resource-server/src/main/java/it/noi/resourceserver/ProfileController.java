@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.security.Principal;
 
 @RestController
-public class UserController {
+public class ProfileController {
 
     @GetMapping("/me")
-    public Me getUserProtectedResource(Principal principal) {
+    public Me getMeProtectedResource(Principal principal) {
         String email = ((KeycloakPrincipal) principal).getKeycloakSecurityContext().getToken().getEmail();
         return new Me(email);
     }
