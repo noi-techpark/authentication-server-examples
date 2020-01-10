@@ -40,7 +40,32 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth'],
+  auth: {
+    redirect: {
+      login: '/',
+      logout: '/',
+      home: '/profile',
+      callback: '/profile'
+    },
+    strategies: {
+      noi: {
+        _scheme: 'oauth2',
+        authorization_endpoint:
+          'https://auth.aboutbits.local/auth/realms/NOI/protocol/openid-connect/auth',
+        userinfo_endpoint:
+          'https://auth.aboutbits.local/auth/realms/NOI/protocol/openid-connect/userinfo',
+        scope: ['openid', 'profile', 'email'],
+        response_type: 'id_token',
+        token_type: 'Bearer',
+        redirect_uri: 'http://localhost:3000/profile',
+        client_id: 'nuxt-spa-example'
+      }
+    }
+  },
+  router: {
+    middleware: ['auth']
+  },
   /*
    ** Build configuration
    */
