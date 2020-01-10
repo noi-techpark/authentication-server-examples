@@ -1,14 +1,48 @@
 <template>
   <div class="p-5 flex justify-center bg-gray-100">
-    <div class="mx-2 my-4 xl:mx-0 p-5 border-3 border-black bg-white">
-      <h1>You are logged in!</h1>
-      <button @click="logout">Log out</button>
+    <div
+      class="flex flex-col flex-grow items-center mx-2 my-4 xl:mx-0 p-8 border-2 shadow border-black bg-white"
+    >
+      <h1 class="text-xl mb-8">Your Profile</h1>
+      <div class="mb-8">
+        <dl>
+          <div>
+            <dt class="descTitle">Name:</dt>
+            <dd class="inline-block">
+              {{ user.name }}
+            </dd>
+          </div>
+          <div>
+            <dt class="descTitle">Username:</dt>
+            <dd class="inline-block">
+              {{ user.preferred_username }}
+            </dd>
+          </div>
+          <div>
+            <dt class="descTitle">Emai:</dt>
+            <dd class="inline-block">
+              {{ user.email }}
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <button
+        @click="logout"
+        class="mx-auto px-4 py-4 border-2 border-black hover:bg-black hover:text-white"
+      >
+        Log out
+      </button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  computed: {
+    user() {
+      return this.$auth.user
+    }
+  },
   methods: {
     logout() {
       this.$auth.logout()
@@ -16,3 +50,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.descTitle {
+  @apply inline-block font-bold;
+  min-width: 100px;
+}
+</style>
