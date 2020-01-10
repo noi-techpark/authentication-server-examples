@@ -56,7 +56,7 @@ export default {
         userinfo_endpoint:
           'https://auth.aboutbits.local/auth/realms/NOI/protocol/openid-connect/userinfo',
         scope: ['openid', 'profile', 'email'],
-        response_type: 'id_token',
+        response_type: 'id_token', // This is important, because only if this is id_token, nuxt will append a nounce value.
         token_type: 'Bearer',
         redirect_uri: 'http://localhost:3000/profile',
         client_id: 'nuxt-spa-example'
