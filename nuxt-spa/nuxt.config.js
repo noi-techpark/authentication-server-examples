@@ -41,12 +41,15 @@ export default {
    ** Nuxt.js modules
    */
   modules: ['@nuxtjs/axios', '@nuxtjs/auth'],
+  axios: {
+    credentials: true
+  },
   auth: {
     redirect: {
       login: '/',
       logout: '/',
       home: '/profile',
-      callback: '/profile'
+      callback: '/callback'
     },
     strategies: {
       noi: {
@@ -55,10 +58,11 @@ export default {
           'https://auth.aboutbits.local/auth/realms/NOI/protocol/openid-connect/auth',
         userinfo_endpoint:
           'https://auth.aboutbits.local/auth/realms/NOI/protocol/openid-connect/userinfo',
-        scope: ['openid', 'profile', 'email'],
-        response_type: 'id_token', // This is important, because only if this is id_token, nuxt will append a nounce value.
+        scope: ['profile', 'email'],
+        response_type: 'token',
+        token_key: 'access_token',
         token_type: 'Bearer',
-        redirect_uri: 'http://localhost:3000/profile',
+        redirect_uri: 'http://localhost:3000/callback',
         client_id: 'nuxt-spa-example'
       }
     }
