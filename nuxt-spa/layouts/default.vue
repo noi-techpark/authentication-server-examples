@@ -1,55 +1,45 @@
 <template>
-  <div>
-    <nuxt />
+  <div id="layout" class="font-sans">
+    <div class="mb-4">
+      <div class="mb-4 xl:mb-0 flex content-end border-b border-gray-500">
+        <div class="p-4 flex flex-col justify-center">
+          <nuxt-link to="/"
+            ><img src="~/static/noi.svg" alt="NOI" class="image-noi"
+          /></nuxt-link>
+        </div>
+        <div
+          class="flex flex-1 flex-col justify-center p-4 border-l border-gray-500 leading-tight font-light text-3xl sm:text-4xl"
+        >
+          <nuxt-link to="/">
+            NOI SPA Example App
+          </nuxt-link>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-0 xl:px-4">
+      <nuxt />
+    </div>
   </div>
 </template>
 
 <style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
+#layout {
   -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
+  @apply text-black;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-}
+.image-noi {
+  width: auto;
+  height: 40px;
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
+  @screen sm {
+    height: 50px;
+  }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+  @screen xl {
+    height: 65px;
+  }
 }
 </style>
