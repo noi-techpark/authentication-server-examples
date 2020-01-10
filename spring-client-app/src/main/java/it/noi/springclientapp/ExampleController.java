@@ -9,7 +9,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 import static org.springframework.security.oauth2.client.web.reactive.function.client.ServletOAuth2AuthorizedClientExchangeFilterFunction.clientRegistrationId;
 
 @RestController
-public class TestController {
+public class ExampleController {
 
     @Value("${resource-server.base-uri}")
     private String resourceServer;
@@ -17,13 +17,13 @@ public class TestController {
     @Autowired
     private WebClient webClient;
 
-    @GetMapping(value = "/user/client-credentials")
-    public String getUserFromResourceServerWithClientCredentialsFlow() {
-        String response = getUserFromResourceServer("resource-server-client-client-credentials");
+    @GetMapping(value = "/example/client-credentials")
+    public String getFromResourceServerWithClientCredentialsFlow() {
+        String response = getFromResourceServer("resource-server-client-client-credentials");
         return response;
     }
 
-    private String getUserFromResourceServer(String clientRegistrationId) {
+    private String getFromResourceServer(String clientRegistrationId) {
         return this.webClient
                 .get()
                 .uri(resourceServer + "/user")
