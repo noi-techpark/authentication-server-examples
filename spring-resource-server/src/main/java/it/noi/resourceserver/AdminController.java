@@ -8,7 +8,7 @@ public class AdminController {
 
     @GetMapping("/admin")
     public String getAdminProtectedResource() {
-        return "Hello Admin";
+        return "Admin protected resource";
     }
 
 }
