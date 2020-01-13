@@ -26,9 +26,14 @@
           </div>
         </dl>
       </div>
+      <nuxt-link
+        to="/resource-server"
+        class="mx-auto px-4 py-4 border-2 border-black hover:bg-black hover:text-white"
+        >Get my email from resource server</nuxt-link
+      >
       <button
         @click="logout"
-        class="mx-auto px-4 py-4 border-2 border-black hover:bg-black hover:text-white"
+        class="mx-auto mt-4 px-4 py-4 border-2 border-black hover:bg-black hover:text-white"
       >
         Log out
       </button>
