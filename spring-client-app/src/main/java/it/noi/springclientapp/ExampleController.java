@@ -19,14 +19,14 @@ public class ExampleController {
 
     @GetMapping(value = "/example/client-credentials")
     public String getFromResourceServerWithClientCredentialsFlow() {
-        String response = getFromResourceServer("resource-server-client-client-credentials");
+        String response = getFromResourceServer("example-client-client-credentials");
         return response;
     }
 
     private String getFromResourceServer(String clientRegistrationId) {
         return this.webClient
                 .get()
-                .uri(resourceServer + "/user")
+                .uri(resourceServer + "/admin")
                 .attributes(clientRegistrationId(clientRegistrationId))
                 .retrieve()
                 .bodyToMono(String.class)
