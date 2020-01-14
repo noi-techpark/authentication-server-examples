@@ -1,1 +1,4 @@
 auth-example-spring-resource-server.iml
+.settings
+.project
+.classpath
