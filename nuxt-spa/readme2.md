@@ -1,4 +1,5 @@
-# VueJS Nuxt Single Page App
+VueJS Nuxt Single Page App
+==========================
 
 This is an example of a single page application, that authorizes a user with the authentication server.
 The profile page will use the OpenID connect endpoint /userinfo to display claims about the logged in user.
@@ -16,7 +17,7 @@ The resource-server page will show how you can use the access_token to access en
 To run the project, the following prerequisites must be met:
 
 - Running authentication server
-- Running spring-resource-server example app [Getting started](../spring-resource-server/README.md)
+- Running spring-resource-server example app [Getting started](../spring-resource-server/readme.md)
 
 ### Development
 

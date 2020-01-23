@@ -7,7 +7,13 @@ services:
     volumes:
        - ./:/code
     working_dir: /code
-    command: ["./mvnw spring-boot:run"]
+    command: ["mvn spring-boot:run"]
+    environment:
+      SERVER_PORT: ${SERVER_PORT:-8085}
+      SECURITY_ALLOWED_ORIGINS: ${SECURITY_ALLOWED_ORIGINS}
+      KEYCLOAK_URL: ${KEYCLOAK_URL}
+      KEYCLOAK_REALM: ${KEYCLOAK_REALM}
+      KEYCLOAK_CLIENT_ID: ${KEYCLOAK_RESOURCE}
+      KEYCLOUK_CLIENT_SECRET: ${KEYCLOUK_CLIENT_SECRET}
     ports:
-      - "8085:8085"
-    #network_mode: "host"
+      - "${SERVER_PORT:-8085}:${SERVER_PORT:-8085}"

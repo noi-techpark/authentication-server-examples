@@ -1,4 +1,5 @@
-# Keycloak secured resource server
+Spring Boot Resource Server
+===========================
 
 This server exposes two routes: `/admin` and `/me`.
 The admin route requires an authenticated user or service with admin role and the user route requires an authenticated user or service with user role.
@@ -18,16 +19,18 @@ on your local machine for development and testing purposes.
 
 To build the project, the following prerequisites must be met:
 
+- [Running authentication server](https://github.com/noi-techpark/authentication-server)
 - Java JDK 1.8 or higher (e.g. [OpenJDK](https://openjdk.java.net/))
 - [Maven](https://maven.apache.org/) 3.x
-- Running authentication server
+
+If you want to run the application using [Docker](https://www.docker.com/), the environment is already set up with all dependencies for you and you just have to adjust some configuration parameters. You only have to install [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/) and follow the instruction in the [dedicated section](#execute-with-docker).
 
 ### Source code
 
 Get a copy of the repository:
 
 ```bash
-git clone https://github.com/noi-techpark/authentication-examples.git
+git clone https://github.com/noi-techpark/authentication-server-examples.git
 ```
 
 Change directory:
@@ -36,26 +39,35 @@ Change directory:
 cd authentication-examples/spring-resource-server
 ```
 
-### Configure
+### Execute without Docker
 
-Adjust `src/main/resources/application.properties` if needed.
-The defaults are already configured, that the you can use the Docker environment right away without any modifications.
-
-### Development
+Copy the file `src/main/resources/application.properties` to `src/main/resources/application-local.properties` and adjust the variables that get their values from environment variables. You can take a look at the `.env.example` for some help.
 
 Build the project:
 
 ```bash
-./mvnw clean install
+mvn -Dspring.profiles.active=local clean install
 ```
 
 Run the project:
 
 ```bash
-./mvnw spring-boot:run
+mvn -Dspring.profiles.active=local spring-boot:run
 ```
 
-The service will be available at [http://localhost:8085](http://localhost:8085).
+The service will be available at localhost and your specified server port.
+
+### Execute with Docker
+
+Copy the file `.env.example` to `.env` and adjust the configuration parameters.
+
+Then you can start the application using the following command:
+
+```bash
+docker-compose up
+```
+
+The service will be available at localhost and your specified server port.
 
 ## Client Registration
 

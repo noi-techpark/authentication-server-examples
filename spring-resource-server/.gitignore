@@ -1,4 +1,18 @@
-auth-example-spring-resource-server.iml
+# General
+.DS_Store
+
+# Editors
+.idea
+*.iws
+*.iml
+*.ipr
+.vscode
+
+# Project
+/.env
+/src/main/resources/application-local.properties
+/.mvn
+/target
 .settings
 .project
 .classpath

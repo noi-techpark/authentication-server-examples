@@ -1,8 +1,9 @@
+# General
+.DS_Store
+
 # Editors
 .idea
-
-# Project
-target
-
-# Files
-.DS_Store
+*.iws
+*.iml
+*.ipr
+.vscode

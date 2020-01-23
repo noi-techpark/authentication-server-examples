@@ -55,9 +55,9 @@ export default {
       noi: {
         _scheme: 'oauth2',
         authorization_endpoint:
-          'https://auth.aboutbits.local/auth/realms/NOI/protocol/openid-connect/auth',
+          'http://localhost:8080/auth/realms/NOI/protocol/openid-connect/auth',
         userinfo_endpoint:
-          'https://auth.aboutbits.local/auth/realms/NOI/protocol/openid-connect/userinfo',
+          'http://localhost:8080/auth/realms/NOI/protocol/openid-connect/userinfo',
         scope: ['profile', 'email'],
         response_type: 'token',
         token_key: 'access_token',
