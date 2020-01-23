@@ -10,6 +10,7 @@
 
 # Project
 /.env
+/src/main/resources/application-local.properties
 /.mvn
 /target
 .settings
