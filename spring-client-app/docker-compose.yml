@@ -1,6 +1,6 @@
 version: "3"
 services:
-  java:
+  spring-client-app:
     build:
       context: .
       dockerfile: docker/dockerfile-java
@@ -18,3 +18,12 @@ services:
       KEYCLOAK_TOKEN_URI: ${KEYCLOAK_TOKEN_URI}
     ports:
       - "${SERVER_PORT:-8082}:${SERVER_PORT:-8082}"
+    networks:
+      - internal
+      - authentication
+
+networks:
+  authentication:
+    external: true
+  internal:
+    external: false

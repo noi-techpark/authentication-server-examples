@@ -94,6 +94,6 @@ Following configuration needs to be done on the authentication server to success
 
 | Property                                                         | Value |
 | ---------------------------------------------------------------- | ----- |
-| Client roles -> spring-resource-server -> Assigned Roles | admin |
+| Client roles -> spring-resource-server -> Assigned Roles         | admin |
 
 This tells the authorization server that if we the client authenticates it self it has admin rights on the spring-example-resource-server.

@@ -1,6 +1,6 @@
 version: "3"
 services:
-  java:
+  spring-resource-server:
     build:
       context: .
       dockerfile: docker/dockerfile-java
@@ -13,7 +13,16 @@ services:
       SECURITY_ALLOWED_ORIGINS: ${SECURITY_ALLOWED_ORIGINS}
       KEYCLOAK_URL: ${KEYCLOAK_URL}
       KEYCLOAK_REALM: ${KEYCLOAK_REALM}
-      KEYCLOAK_CLIENT_ID: ${KEYCLOAK_RESOURCE}
+      KEYCLOAK_CLIENT_ID: ${KEYCLOAK_CLIENT_ID}
       KEYCLOUK_CLIENT_SECRET: ${KEYCLOUK_CLIENT_SECRET}
     ports:
       - "${SERVER_PORT:-8085}:${SERVER_PORT:-8085}"
+    networks:
+      - internal
+      - authentication
+
+networks:
+  authentication:
+    external: true
+  internal:
+    external: false
