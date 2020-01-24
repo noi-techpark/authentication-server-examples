@@ -22,6 +22,20 @@ To run the project, the following prerequisites must be met:
 
 If you want to run the application using [Docker](https://www.docker.com/), the environment is already set up with all dependencies for you and you just have to adjust some configuration parameters. You only have to install [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/) and follow the instruction in the [dedicated section](#execute-with-docker).
 
+### Source code
+
+Get a copy of the repository:
+
+```bash
+git clone https://github.com/noi-techpark/authentication-server-examples.git
+```
+
+Change directory:
+
+```bash
+cd authentication-examples/nuxt-spa
+```
+
 ### Execute without Docker
 
 Copy the file `.env.example` to `.env` and adjust the configuration parameters.
