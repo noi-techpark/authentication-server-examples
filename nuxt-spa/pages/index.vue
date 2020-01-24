@@ -8,7 +8,7 @@
         @click="login"
         class="mx-auto px-4 py-4 border-2 border-black hover:bg-black hover:text-white"
       >
-        Log in with <strong>NOI OAuth</strong>
+        Log in with <strong>NOI Authentication</strong>
       </button>
     </div>
   </div>

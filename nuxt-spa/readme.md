@@ -16,20 +16,36 @@ The resource-server page will show how you can use the access_token to access en
 
 To run the project, the following prerequisites must be met:
 
-- Running authentication server
-- Running spring-resource-server example app [Getting started](../spring-resource-server/readme.md)
+- [Running authentication server](https://github.com/noi-techpark/authentication-server)
+- [Running spring-resource-server](../spring-resource-server/readme.md)
+- [Node 12](https://nodejs.org) (and NPM)
 
-### Development
+If you want to run the application using [Docker](https://www.docker.com/), the environment is already set up with all dependencies for you and you just have to adjust some configuration parameters. You only have to install [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/) and follow the instruction in the [dedicated section](#execute-with-docker).
+
+### Execute without Docker
+
+Copy the file `.env.example` to `.env` and adjust the configuration parameters.
+
+Install all dependencies and run the project:
 
 ```bash
-# install dependencies
-$ yarn
-
-# serve with hot reload at localhost:3000
-$ yarn dev
+yarn install
+yarn dev
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+The service will be available at [http://localhost:3000](http://localhost:3000).
+
+### Execute with Docker
+
+Copy the file `.env.example` to `.env` and adjust the configuration parameters.
+
+Then you can start the application using the following command:
+
+```bash
+docker-compose up
+```
+
+The service will be available at localhost and your specified server port.
 
 ## Client registration
 

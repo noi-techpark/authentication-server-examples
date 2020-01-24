@@ -1,5 +1,8 @@
 export default {
   mode: 'spa',
+  env: {
+    resource: process.env.RESOURCE_URI || 'http://localhost:8085'
+  },
   /*
    ** Headers of the page
    */
@@ -54,16 +57,14 @@ export default {
     strategies: {
       noi: {
         _scheme: 'oauth2',
-        authorization_endpoint:
-          'http://localhost:8080/auth/realms/NOI/protocol/openid-connect/auth',
-        userinfo_endpoint:
-          'http://localhost:8080/auth/realms/NOI/protocol/openid-connect/userinfo',
+        authorization_endpoint: process.env.KEYCLOAK_AUTHORIZATION_URI || 'http://localhost:8080/auth/realms/NOI/protocol/openid-connect/auth',
+        userinfo_endpoint: process.env.KEYCLOAK_USERINFO_URI || 'http://localhost:8080/auth/realms/NOI/protocol/openid-connect/userinfo',
         scope: ['profile', 'email'],
         response_type: 'token',
         token_key: 'access_token',
         token_type: 'Bearer',
-        redirect_uri: 'http://localhost:3000/callback',
-        client_id: 'nuxt-spa-example'
+        redirect_uri: process.env.KEYCLOAK_CALLBACK || 'http://localhost:3000/callback',
+        client_id: process.env.KEYCLOAK_CLIENT_ID || 'nuxt-spa'
       }
     }
   },

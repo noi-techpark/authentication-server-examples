@@ -26,7 +26,7 @@
 <script>
 export default {
   async asyncData({ $axios }) {
-    const data = await $axios.$get('http://localhost:8085/me')
+    const data = await $axios.$get(process.env.resource + '/me')
     return { me: data }
   }
 }
