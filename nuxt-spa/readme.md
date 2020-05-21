@@ -16,7 +16,7 @@ The resource-server page will show how you can use the access_token to access en
 
 To run the project, the following prerequisites must be met:
 
-- [Running authentication server](https://github.com/noi-techpark/authentication-server)
+- (optional) [Running authentication server](https://github.com/noi-techpark/authentication-server)
 - [Running spring-resource-server](../spring-resource-server/readme.md)
 - [Node 12](https://nodejs.org) (and NPM)
 
