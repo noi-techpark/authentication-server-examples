@@ -18,7 +18,7 @@ on your local machine for development and testing purposes.
 
 To build the project, the following prerequisites must be met:
 
-- [Running authentication server](https://github.com/noi-techpark/authentication-server)
+- (optional) [Running authentication server](https://github.com/noi-techpark/authentication-server)
 - [Running spring-resource-server](../spring-resource-server/readme.md)
 - Java JDK 1.8 or higher (e.g. [OpenJDK](https://openjdk.java.net/))
 - [Maven](https://maven.apache.org/) 3.x
