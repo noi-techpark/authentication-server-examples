@@ -97,3 +97,14 @@ Following configuration needs to be done on the authentication server to success
 | Client roles -> spring-resource-server -> Assigned Roles         | admin |
 
 This tells the authorization server that if we the client authenticates it self it has admin rights on the spring-example-resource-server.
+
+## Testing with curl
+
+```
+curl --location --request POST \
+    'https://auth.opendatahub.testingmachine.eu/auth/realms/noi/protocol/openid-connect/token' \
+    --header 'Content-Type: application/x-www-form-urlencoded' \
+    --data-urlencode 'grant_type=client_credentials' \
+    --data-urlencode 'client_id=auth-server-examples-spring-client-app' \
+    --data-urlencode 'client_secret=bc7d5183-6991-4cd6-b809-f2dafde263e8'
+```

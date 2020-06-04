@@ -83,3 +83,31 @@ It is not possible to request access token from this client application.
 ### Roles
 
 admin, project_manager
+
+### OpenDataHub generic client with username and password
+
+WARNING: Please use this workflow with care. It exposes your username and password if you use it in a non-secured client application. For example, when the application does not use HTTPS. Open this workflow only, if you have a strong reason for it.
+
+In this example application, we will use it for testing purposes.
+
+Client name: `odh-generic-client`
+
+| Property                     | Value        |
+| ---------------------------- | ------------ |
+| Access Type                  | Confidential |
+| Standard Flow Enabled        | OFF          |
+| Implicit Flow Enabled        | OFF          |
+| Direct Access Grants Enabled | ON           |
+| Service Accounts Enabled     | OFF          |
+
+### Scope
+
+| Property           | Value |
+| ------------------ | ----- |
+| Full Scope Allowed | OFF   |
+
+Client Roles add all roles from `auth-example-spring-resource-server`.
+
+### Users
+
+Go to `Role Mappings` and choose `odh-generic-client`
