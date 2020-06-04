@@ -88,7 +88,7 @@ admin, project_manager
 
 WARNING: Please use this workflow with care. It exposes your username and password if you use it in a non-secured client application. For example, when the application does not use HTTPS. Open this workflow only, if you have a strong reason for it.
 
-In this example application, we will use it for testing purposes.
+In this example application, we will use it only for testing purposes.
 
 Client name: `odh-generic-client`
 
