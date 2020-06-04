@@ -29,4 +29,5 @@ Additional information can be found inside each project's `.env.example` file.
 
 The `Role` can be set under Users > Role Mappings > `auth-server-examples-spring-resource-server` > Add Selected...
 
-To test your configuration see [calls.http](calls.http).
+## TESTING
+To test your configuration see [/calls.http](/calls.http).

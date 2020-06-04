@@ -111,3 +111,6 @@ Under `Client Roles` add all roles from `auth-example-spring-resource-server`.
 ### Users
 
 Choose the user `authtestuser1`, go to `Role Mappings` and choose `odh-generic-client`
+
+## TESTING
+To test your configuration see [/calls.http](/calls.http).

@@ -98,7 +98,10 @@ Following configuration needs to be done on the authentication server to success
 
 This tells the authorization server that if we the client authenticates it self it has admin rights on the spring-example-resource-server.
 
-## Testing with curl
+## TESTING
+To test your configuration see [/calls.http](/calls.http).
+
+### Testing with curl
 
 ```
 curl --location --request POST \
