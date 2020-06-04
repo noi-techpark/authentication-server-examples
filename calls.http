@@ -1,0 +1,27 @@
+### Get Token with grant_type=client_credentials
+POST https://auth.opendatahub.testingmachine.eu/auth/realms/noi/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials
+&client_id=auth-server-examples-spring-client-app
+&client_secret=bc7d5183-6991-4cd6-b809-f2dafde263e8
+
+### Test grant_type=password (user1)
+POST https://auth.opendatahub.testingmachine.eu/auth/realms/noi/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password
+&client_id=odh-generic-client
+&client_secret=5c227464-92d0-4535-a1da-36b4bdb5ba0c
+&username=authtestuser1
+&password=onsDDh5x9
+
+### Test grant_type=password (user2)
+POST https://auth.opendatahub.testingmachine.eu/auth/realms/noi/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password
+&client_id=odh-generic-client
+&client_secret=5c227464-92d0-4535-a1da-36b4bdb5ba0c
+&username=authtestuser2
+&password=pNmTg5x37

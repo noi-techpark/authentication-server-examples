@@ -26,3 +26,7 @@ Additional information can be found inside each project's `.env.example` file.
 | -------------- | ---------- | ---------------
 | authtestuser1  | onsDDh5x9  | admin
 | authtestuser2  | pNmTg5x37  | project_manager
+
+The `Role` can be set under Users > Role Mappings > `auth-server-examples-spring-resource-server` > Add Selected...
+
+To test your configuration see [calls.http](calls.http).

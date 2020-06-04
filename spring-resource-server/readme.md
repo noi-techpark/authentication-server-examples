@@ -90,7 +90,7 @@ WARNING: Please use this workflow with care. It exposes your username and passwo
 
 In this example application, we will use it only for testing purposes.
 
-Client name: `odh-generic-client`
+Create a client with name `odh-generic-client`. The actual secret is `5c227464-92d0-4535-a1da-36b4bdb5ba0c`.
 
 | Property                     | Value        |
 | ---------------------------- | ------------ |
@@ -106,8 +106,8 @@ Client name: `odh-generic-client`
 | ------------------ | ----- |
 | Full Scope Allowed | OFF   |
 
-Client Roles add all roles from `auth-example-spring-resource-server`.
+Under `Client Roles` add all roles from `auth-example-spring-resource-server`.
 
 ### Users
 
-Go to `Role Mappings` and choose `odh-generic-client`
+Choose the user `authtestuser1`, go to `Role Mappings` and choose `odh-generic-client`
