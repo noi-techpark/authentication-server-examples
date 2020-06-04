@@ -1,5 +1,8 @@
+#################### KEYCLOAK AUTH SERVER #####################################
+@keycloak_token=https://auth.opendatahub.testingmachine.eu/auth/realms/noi/protocol/openid-connect/token
+
 ### Get Token with grant_type=client_credentials
-POST https://auth.opendatahub.testingmachine.eu/auth/realms/noi/protocol/openid-connect/token
+POST {{keycloak_token}}
 Content-Type: application/x-www-form-urlencoded
 
 grant_type=client_credentials
@@ -7,7 +10,7 @@ grant_type=client_credentials
 &client_secret=bc7d5183-6991-4cd6-b809-f2dafde263e8
 
 ### Test grant_type=password (user1)
-POST https://auth.opendatahub.testingmachine.eu/auth/realms/noi/protocol/openid-connect/token
+POST {{keycloak_token}}
 Content-Type: application/x-www-form-urlencoded
 
 grant_type=password
@@ -17,7 +20,7 @@ grant_type=password
 &password=onsDDh5x9
 
 ### Test grant_type=password (user2)
-POST https://auth.opendatahub.testingmachine.eu/auth/realms/noi/protocol/openid-connect/token
+POST {{keycloak_token}}
 Content-Type: application/x-www-form-urlencoded
 
 grant_type=password
@@ -25,3 +28,31 @@ grant_type=password
 &client_secret=5c227464-92d0-4535-a1da-36b4bdb5ba0c
 &username=authtestuser2
 &password=pNmTg5x37
+
+### Test grant_type=refresh_token (copy one from calls above)
+POST {{keycloak_token}}
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=refresh_token
+&client_id=odh-generic-client
+&client_secret=5c227464-92d0-4535-a1da-36b4bdb5ba0c
+&refresh_token=your-refresh-token
+
+
+#################### RESOURCE SERVER ##########################################
+
+### Test admin access (copy access_token from above calls)
+GET http://localhost:8085/admin
+Content-Type: application/json
+Authorization: bearer your-token
+
+### Test /me access (copy access_token from grant_type=password user1 or user2)
+GET http://localhost:8085/me
+Content-Type: application/json
+Authorization: bearer your-token
+
+#################### CLIENT APP ###############################################
+
+### Test to get a protected resource through a client app, that
+### uses grant_type=client_credentials, which is already configured within the app
+GET http://localhost:8082/example/client-credentials
