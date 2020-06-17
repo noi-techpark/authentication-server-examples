@@ -5,8 +5,6 @@
   "scripts": {
     "dev": "http-server -p 3000"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "http-server": "^0.12.3"
   }
