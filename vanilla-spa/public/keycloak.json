@@ -1,0 +1,8 @@
+{
+    "realm": "noi",
+    "auth-server-url": "https://auth.opendatahub.testingmachine.eu/auth",
+    "ssl-required": "external",
+    "resource": "auth-server-examples-vanilla-spa",
+    "public-client": true,
+    "confidential-port": 0
+  }
