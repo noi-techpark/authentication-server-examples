@@ -11,6 +11,7 @@ public class ProfileController {
 
     @GetMapping("/me")
     public Me getMeProtectedResource(Principal principal) {
+        @SuppressWarnings("rawtypes")
         String email = ((KeycloakPrincipal) principal).getKeycloakSecurityContext().getToken().getEmail();
         return new Me(email);
     }
@@ -22,6 +23,7 @@ public class ProfileController {
             this.email = email;
         }
 
+        @SuppressWarnings("unused")
         public String getEmail() {
             return email;
         }
