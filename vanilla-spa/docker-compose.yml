@@ -7,6 +7,6 @@ services:
     volumes:
        - ./:/code
     working_dir: /code
-    command: "npm run dev"
+    command: sh -c "test -d node_modules || npm install; npm run dev"
     ports:
       - "3000:3000"

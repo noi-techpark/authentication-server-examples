@@ -11,13 +11,13 @@
         })
         .then(function (authenticated) {
             if (authenticated) {
-                alert("authenticated")
+                alert("SUCCESS: Authenticated")
             } else {
                 keycloak.login()
             }
         })
         .catch(function () {
-          alert("failed to initialize");
+          alert("ERROR: Failed to initialize. Is your resource server running? See README for details.");
         });
 
         setInterval(() => {

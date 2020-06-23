@@ -42,7 +42,8 @@ npm install
 npm run dev
 ```
 
-The service will be available at [http://localhost:3000](http://localhost:3000).
+The service will be available at [http://localhost:3000](http://localhost:3000) or [http://127.0.0.1:3000](http://127.0.0.1:3000).
+Make sure not to use any other address, since Keycloak is very strict, and will not allow you to access confidential data.
 
 ### Execute with Docker
 
@@ -50,7 +51,8 @@ The service will be available at [http://localhost:3000](http://localhost:3000).
 docker-compose up
 ```
 
-The service will be available at [http://localhost:3000](http://localhost:3000).
+The service will be available at [http://localhost:3000](http://localhost:3000) or [http://127.0.0.1:3000](http://127.0.0.1:3000).
+Make sure not to use any other address, since Keycloak is very strict, and will not allow you to access confidential data.
 
 ## Client registration
 
@@ -70,3 +72,5 @@ Following configuration needs to be done on the authentication server to success
 | Valid Redirect URIs          | http://localhost:3000/, http://localhost:3000/silent-check-sso.html |
 | Web Origins                  | http://localhost:3000                                               |
 
+Note: Keycloak is very strict, and will not allow you to access confidential data. If you want also to allow
+[http://127.0.0.1:3000](http://127.0.0.1:3000), you need to add it to `Valid Redirect URIs` and `Web Origins`.
