@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script src="https://auth.opendatahub.testingmachine.eu/auth/js/keycloak.js"></script>
+    <script>
+      var keycloak = new Keycloak();
+      keycloak
+        .init({
+          onLoad: "check-sso",
+          silentCheckSsoRedirectUri:
+            window.location.origin + "/silent-check-sso.html",
+        })
+        .then(function (authenticated) {
+            if (authenticated) {
+                alert("authenticated")
+            } else {
+                keycloak.login()
+            }
+        })
+        .catch(function () {
+          alert("failed to initialize");
+        });
+
+        setInterval(() => {
+            console.log('UPDATE TOKEN')
+            keycloak.updateToken(30).then(function() {
+                console.log('NEW TOKEN', keycloak.token)
+            })
+        }, 60000)
+    </script>
+  </head>
+</html>

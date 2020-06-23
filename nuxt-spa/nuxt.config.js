@@ -57,14 +57,22 @@ export default {
     strategies: {
       noi: {
         _scheme: 'oauth2',
-        authorization_endpoint: process.env.KEYCLOAK_AUTHORIZATION_URI || 'https://auth.opendatahub.testingmachine.eu/auth/realms/noi/protocol/openid-connect/auth',
-        userinfo_endpoint: process.env.KEYCLOAK_USERINFO_URI || 'https://auth.opendatahub.testingmachine.eu/auth/realms/noi/protocol/openid-connect/userinfo',
+        authorization_endpoint:
+          process.env.KEYCLOAK_AUTHORIZATION_URI ||
+          'https://auth.opendatahub.testingmachine.eu/auth/realms/noi/protocol/openid-connect/auth',
+        userinfo_endpoint:
+          process.env.KEYCLOAK_USERINFO_URI ||
+          'https://auth.opendatahub.testingmachine.eu/auth/realms/noi/protocol/openid-connect/userinfo',
+        access_token_endpoint:
+          process.env.KEYCLOAK_ACCESS_TOKEN_URI ||
+          'https://auth.opendatahub.testingmachine.eu/auth/realms/noi/protocol/openid-connect/token',
         scope: ['profile', 'email'],
-        response_type: 'token',
-        token_key: 'access_token',
-        token_type: 'Bearer',
-        redirect_uri: process.env.KEYCLOAK_CALLBACK || 'http://localhost:3000/callback',
-        client_id: process.env.KEYCLOAK_CLIENT_ID || 'auth-server-examples-nuxt-spa'
+        response_type: 'code',
+        grant_type: 'authorization_code',
+        redirect_uri:
+          process.env.KEYCLOAK_CALLBACK || 'http://localhost:3000/callback',
+        client_id:
+          process.env.KEYCLOAK_CLIENT_ID || 'auth-server-examples-nuxt-spa'
       }
     }
   },

@@ -6,7 +6,7 @@ This repository contains three example applications to demonstrate how you can c
 - [Spring Resource Server](spring-resource-server/readme.md)
 - [Spring Client App](spring-client-app/readme.md)
 - [Nuxt.js SPA](nuxt-spa/readme.md)
-
+- [Vanilla JS SPA](vanilla-spa/readme.md)
 
 
 Preconfigured Keycloak Authentication Server

@@ -63,7 +63,7 @@ The service will be available at localhost and your specified server port.
 
 ## Client registration
 
-In single page applications it is not possible to keep the client secret confidential, thats why we have to register this application with the Implict Flow enabled.
+In single page applications it is not possible to keep the client secret confidential.
 
 Following configuration needs to be done on the authentication server to successfully register this application:
 
@@ -72,8 +72,8 @@ Following configuration needs to be done on the authentication server to success
 | Property                     | Value                          |
 | ---------------------------- | ------------------------------ |
 | Access Type                  | Public                         |
-| Standard Flow Enabled        | OFF                            |
-| Implicit Flow Enabled        | ON                             |
+| Standard Flow Enabled        | ON                            |
+| Implicit Flow Enabled        | OFF                             |
 | Direct Access Grants Enabled | OFF                            |
 | Service Accounts Enabled     | OFF                            |
 | Valid Redirect URIs          | http://localhost:3000/callback |

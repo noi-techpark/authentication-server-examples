@@ -1,0 +1,12 @@
+version: "3"
+services:
+  node:
+    build:
+     context: .
+     dockerfile: docker/dockerfile-node
+    volumes:
+       - ./:/code
+    working_dir: /code
+    command: "npm run dev"
+    ports:
+      - "3000:3000"

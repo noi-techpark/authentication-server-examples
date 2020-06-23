@@ -1,0 +1,11 @@
+{
+  "name": "vanilla-spa",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "http-server -p 3000"
+  },
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}
