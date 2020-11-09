@@ -1,5 +1,29 @@
 <html>
   <head>
+    <style>
+      body {
+        background-color: #f1f1f1;
+        color: #2E3131;
+      }
+      
+      .container {
+        max-width: 1024px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1rem;
+      }
+      
+      h1 {
+        color: #2E3131;
+      }
+
+      button {
+        border-width: 1px;
+        border-color: #2E3131;
+        border-radius: 4px;
+        padding: .5rem 3rem;
+      }
+    </style>
     <script src="https://auth.opendatahub.testingmachine.eu/auth/js/keycloak.js"></script>
     <script>
       var keycloak = new Keycloak();
@@ -12,8 +36,6 @@
         .then(function (authenticated) {
             if (authenticated) {
                 alert("SUCCESS: Authenticated")
-            } else {
-                keycloak.login()
             }
         })
         .catch(function () {
@@ -26,6 +48,24 @@
                 console.log('NEW TOKEN', keycloak.token)
             })
         }, 60000)
+
+      function onLogin() {
+        keycloak.login()
+      }
+
+      function onRegister() {
+        keycloak.register()
+      }
     </script>
   </head>
+  <body>
+    <main class="container">
+      <h1>Vanilla JS - Single Page App example</h1>
+
+      <div>
+        <button onclick="onLogin()">Login</button>
+        <button onclick="onRegister()">Register</button>
+      </div>
+    </main>
+  </body>
 </html>
