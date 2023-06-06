@@ -1,0 +1,11 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: authentication-server-examples
+Upstream-Contact: NOI Techpark <digital@noi.bz.it>
+Source: https://github.com/noi-techpark/authentication-server-examples
+
+Files: .gitignore calls.http
+       */.gitignore */.env.example */docker/* *.properties
+       nuxt-spa/yarn.lock nuxt-spa/*.json nuxt-spa/.prettierrc nuxt-spa/.editorconfig nuxt-spa/static/*
+       vanilla-spa/*.json
+Copyright: (c) NOI Techpark <digital@noi.bz.it>
+License: CC0-1.0

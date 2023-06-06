@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: NOI Techpark <digital@noi.bz.it>
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
 # Vanilla JS Application
 
 This is an example of a single page application, that authorizes a user with the authentication server. Once the user authenticates successfully, an alert with "authenticated" will be shown. This example is based on the official Keycloak [Javascript adapter](https://www.keycloak.org/docs/latest/securing_apps/#_javascript_adapter) example.
